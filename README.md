@@ -1,10 +1,42 @@
+Concourse
+============
+Concourse CI Server: https://s1p-10.pcfninja.io
+
+Useful commands:
+* Logging into Concourse
+  * `$ fly -t s1p-demo login -c https://s1p-10.pcfninja.io -k`
+  * username / password is in the demo dock
+* Setting a pipeline
+  * `$ fly -t s1p-10 set-pipeline -p concourse-spring-music-demo -c ci/pipeline.yml -l ~/concourse-configs/spring-music-s1p-credentials.yml`
+* Unpausing pipeline (can be done through UI as well)
+  * `$ fly -t s1p-10 unpause-pipeline -p concourse-spring-music-demo`
+
+
+### Demo Flow
+* Show Concourse pipeline https://github.com/s1p-10/concourse-spring-music
+* Click around, show the various jobs and the tasks in them
+* cd into the `bin` directory, run either `./makeItGreen.sh` or `./makeItBlue.sh` to change the color of the banner and push the code to Github and trigger the pipeline
+* Show Concourse again and show that it automatically saw a change and started the pipeline
+* Throughout the course of the jobs, click in them to show the prospect what is happening and talk to it as you may
+
+* It's important when the app is deploying to show that it is being done as a blue/green deployment by having a browser window up and refreshing the page to show them where it changes from blue to green
+
+#### Key takeaways
+* Pipeline as code - follows your code though environments and allows you to keep pipeline updated as code changes and be able to deploy pipeline to any Concourse server to avoid creating snowflakes
+* All jobs are executed in containers, no worrying about dirty environments
+
+
+
+
+
+
 Spring Music
 ============
 
 This is a sample application for using database services on [Cloud Foundry](http://cloudfoundry.com)
 with the [Spring Framework](http://www.springframework.org).
 
-This application has been built to store the same domain objects in one of a variety of different persistence technologies - relational, document, and key-value stores. This is not meant to represent a realistic use case for these technologies, since you would typically choose the one most applicable to the type of data you need to store, but it is useful for testing and experimenting with different types of services on Cloud Foundry. 
+This application has been built to store the same domain objects in one of a variety of different persistence technologies - relational, document, and key-value stores. This is not meant to represent a realistic use case for these technologies, since you would typically choose the one most applicable to the type of data you need to store, but it is useful for testing and experimenting with different types of services on Cloud Foundry.
 
 The application use Spring Java configuration and [bean profiles](http://static.springsource.org/spring/docs/current/spring-framework-reference/html/new-in-3.1.html#new-in-3.1-bean-definition-profiles) to configure the application and the connection objects needed to use the persistence stores. It also uses the [Spring Cloud](https://github.com/spring-projects/spring-cloud) library to inspect the environment when running on Cloud Foundry. See the [Cloud Foundry documentation](http://docs.cloudfoundry.com/docs/using/services/spring-service-bindings.html) for details on configuring a Spring application for Cloud Foundry.
 
