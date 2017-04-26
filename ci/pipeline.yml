@@ -153,11 +153,10 @@ resources:
 - name: version
   type: semver
   source:
-    bucket: {{S3_BUCKET}}
-    key: {{S3_VERSION_FILE}}
-    access_key_id: {{S3_ACCESS_KEY_ID}}
-    secret_access_key: {{S3_SECRET_ACCESS_KEY}}
-    initial_version: 1.0.0
+    uri: {{GIT_REPO}}
+    branch: version
+    file: version-file
+    private_key: {{GIT_PRIVATE_KEY}}
 
 - name: release-candidate
   type: s3
