@@ -153,9 +153,10 @@ resources:
 - name: version
   type: semver
   source:
+    driver: git
     uri: {{GIT_REPO}}
     branch: version
-    file: version-file
+    file: version-filex
     private_key: {{GIT_PRIVATE_KEY}}
 
 - name: release-candidate
