@@ -163,14 +163,19 @@ resources:
   type: s3
   source:
     bucket: {{S3_BUCKET}}
-    regexp: {{S3_PIPELINE_ARTIFACTS}}
-    access_key_id: {{S3_ACCESS_KEY_ID}}
+    regexp: spring-music-(.*).war
+    region_name: {{S3_REGION}}
+    access_key_id: {{S3_ACCESS_KEY}}
     secret_access_key: {{S3_SECRET_ACCESS_KEY}}
+    
 
 - name: production-release
   type: s3
   source:
     bucket: {{S3_BUCKET}}
-    regexp: {{S3_DEPLOYMENTS}}
-    access_key_id: {{S3_ACCESS_KEY_ID}}
+    regexp: spring-music-(.*).war
+    region_name: {{S3_REGION}}
+    access_key_id: {{S3_ACCESS_KEY}}
     secret_access_key: {{S3_SECRET_ACCESS_KEY}}
+
+    
