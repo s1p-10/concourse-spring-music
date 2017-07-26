@@ -8,6 +8,13 @@
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
+        "artist": "Sonic Youth",
+        "title": "Daydream Nation",
+        "releaseYear": "1988",
+        "genre": "Rock"
+    },
+    {
+        "_class": "org.cloudfoundry.samples.music.domain.Album",
         "artist": "The Beach Boys",
         "title": "Pet Sounds",
         "releaseYear": "1966",
