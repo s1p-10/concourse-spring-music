@@ -9,8 +9,8 @@
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
         "artist": "Sonic Youth",
-        "title": "Daydream Nation",
-        "releaseYear": "1988",
+        "title": "Goo",
+        "releaseYear": "1991",
         "genre": "Rock"
     },
     {
