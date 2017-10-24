@@ -4,4 +4,4 @@ applications:
   memory: 512M
   instances: 1
   host: s1p-10-spring-music-uat
-  buildpack: java_buildpack
+  buildpack: java_buildpack_offline
