@@ -1,7 +1,7 @@
 ---
 applications:
 - name: spring-music-test
-  memory: 512M
+  #memory: 512M
   instances: 1
   host: s1p-10-spring-music-test
   buildpack: java_buildpack_offline
