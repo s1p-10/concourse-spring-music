@@ -112,6 +112,13 @@ jobs:
       - put: version
         params: { bump: patch }
 
+resource_types:
+- name: gcs-resource
+  type: docker-image
+  source:
+      repository: frodenas/gcs-resource
+  
+
 resources:
 - name: git-repo
   type: git
@@ -160,22 +167,16 @@ resources:
     private_key: {{GIT_PRIVATE_KEY}}
 
 - name: release-candidate
-  type: s3
+  type: gcs-resource
   source:
-    bucket: {{S3_BUCKET}}
+    bucket: {{GCS_BUCKET}}
     regexp: spring-music-(.*).war
-    region_name: {{S3_REGION}}
-    access_key_id: {{S3_ACCESS_KEY}}
-    secret_access_key: {{S3_SECRET_ACCESS_KEY}}
-    
-
+    json_key: {{GCS_KEY}}
+ 
 - name: production-release
-  type: s3
+  type: gcs-resource
   source:
-    bucket: {{S3_BUCKET}}
+    bucket: {{GCS_BUCKET}}
     regexp: spring-music-(.*).war
-    region_name: {{S3_REGION}}
-    access_key_id: {{S3_ACCESS_KEY}}
-    secret_access_key: {{S3_SECRET_ACCESS_KEY}}
+    json_key: {{GCS_KEY}}
 
-    

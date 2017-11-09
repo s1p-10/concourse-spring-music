@@ -1,7 +1,8 @@
 ---
 applications:
 - name: spring-music-dev
-  memory: 512M
+  #memory: 512M
   instances: 1
   host: s1p-10-spring-music-dev
-  buildpack: java_buildpack
+  path: build/libs/spring-music.war
+  buildpack: java_buildpack_offline
